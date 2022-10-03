@@ -6,9 +6,9 @@ Technical stack:
 - FastAPI (uvicorn, SQLAlchemy, Pydantic, Swagger)
 - DataBase SQLite
 
-DataBase is created on the start if it doesn't exist. There are two separate datebases: one for development and one for testing.
+DataBase is created on the start if it doesn't exist. The same DB is used for development and testing.
 
-Once started the documentation is available on the page http://localhost:8000/docs/
+Once server started the documentation is available on the page http://localhost:8000/docs/
 
 Two users are created if they don't exists in DB:
 1. Login: John, password: John, role: buyer
@@ -40,7 +40,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### Start backend server
+### Start uvicorn server
 ```
 python3 -m uvicorn app.main:app --reload --proxy-headers --host 0.0.0.0 --port 8000
 ```

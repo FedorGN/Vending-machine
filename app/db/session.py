@@ -9,10 +9,3 @@ engine = create_engine(
     connect_args={'check_same_thread': False}
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-engine = create_engine(
-    settings.SQLALCHEMY_TEST_DATABASE_URI,
-    pool_pre_ping=True,
-    connect_args={'check_same_thread': False}
-)
-TestSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)

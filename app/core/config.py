@@ -34,7 +34,6 @@ class Settings(BaseSettings):
     FIRST_USER_PASSWORD: str = os.environ["FIRST_USER_PASSWORD"]
 
     SQLALCHEMY_DATABASE_URI: str = "sqlite:///./sql_app.db"
-    SQLALCHEMY_TEST_DATABASE_URI: str = "sqlite:///./sql_test.db"
     USERS_OPEN_REGISTRATION: bool = True
 
 

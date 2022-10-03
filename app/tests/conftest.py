@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 from pydantic import BaseSettings
 
-from app.db.session import TestSession
+from app.db.session import SessionLocal
 from app.main import app
 from app.tests.utils.user import authentication_token_from_username
 from app.db.enums import UserRoles
@@ -23,7 +23,7 @@ test_settings = TestSettings()
 
 @pytest.fixture(scope="session")
 def db() -> Generator:
-    yield TestSession()
+    yield SessionLocal()
 
 
 @pytest.fixture(scope="module")
